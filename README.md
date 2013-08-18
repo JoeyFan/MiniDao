@@ -26,14 +26,13 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
 * 交流群：325978980，143858350
 
 
-### 接口定义  
+### 接口定义[EmployeeDao.java]  
     
     public interface EmployeeDao {
-
-	  @Arguments("employee")
-	  public List<Map> getAllEmployees(Employee employee);
-	
-	  @Arguments("empno")
+    @Arguments("employee")
+    public List<Map> getAllEmployees(Employee employee);
+    
+    @Arguments("empno")
     Employee getEmployee(String empno);
     
     @Arguments({"empno","name"})
@@ -47,4 +46,36 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
 
     @Arguments("employee")
     void insert(Employee employee);
+    }
+    
+### SQL文件[EmployeeDao_getAllEmployees.sql]
+    SELECT * FROM employee where 1=1 
+    <#if employee.age ?exists>
+	and age = '${employee.age}'
+    </#if>
+    <#if employee.name ?exists>
+	and name = '${employee.name}'
+    </#if>
+    <#if employee.empno ?exists>
+	and empno = '${employee.empno}'
+    </#if>
+
+### 测试代码
+    public class Client {
+    public static void main(String args[]) {
+		BeanFactory factory = new ClassPathXmlApplicationContext(
+				"applicationContext.xml");
+     		
+		EmployeeDao employeeDao = (EmployeeDao) factory.getBean("employeeDao");
+		Employee employee = new Employee();
+		List<Map> list =  employeeDao.getAllEmployees(employee);
+		for(Map mp:list){
+			System.out.println(mp.get("id"));
+			System.out.println(mp.get("name"));
+			System.out.println(mp.get("empno"));
+			System.out.println(mp.get("age"));
+			System.out.println(mp.get("birthday"));
+			System.out.println(mp.get("salary"));
+		}
+	}
     }
