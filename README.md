@@ -18,15 +18,13 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
 
 ※向下兼容Hibernate实体维护方式,实体的增删改查SQL自动生成
 
-技术交流
------------------------------------
-* 作者: 张代浩
-* 技术网站：[www.jeecg.org](http://www.jeecg.org)
-* 邮箱：zhangdaiscott@163.com
-* 交流群：325978980，143858350
+
+
 
 ###接口和SQL文件对应目录
 ![github](http://www.jeecg.org/data/attachment/forum/201308/18/224051ey14ehqe000iegja.jpg "minidao")
+
+
 
 ### 接口定义[EmployeeDao.java]  
     
@@ -50,6 +48,8 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
     void insert(Employee employee);
     }
     
+    
+    
 ### SQL文件[EmployeeDao_getAllEmployees.sql]
     SELECT * FROM employee where 1=1 
     <#if employee.age ?exists>
@@ -61,6 +61,8 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
     <#if employee.empno ?exists>
 	and empno = '${employee.empno}'
     </#if>
+
+
 
 ### 测试代码
     public class Client {
@@ -81,3 +83,11 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
 		}
 	}
     }
+
+
+技术交流
+-----------------------------------
+* 作者: 张代浩
+* 技术网站：[www.jeecg.org](http://www.jeecg.org)
+* 邮箱：zhangdaiscott@163.com
+* 交流群：325978980，143858350
