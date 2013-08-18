@@ -24,3 +24,27 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
 * 技术网站：[www.jeecg.org](www.jeecg.org)
 * 邮箱：zhangdaiscott@163.com
 * 交流群：325978980，143858350
+
+
+### 接口定义  
+    
+    public interface EmployeeDao {
+
+	  @Arguments("employee")
+	  public List<Map> getAllEmployees(Employee employee);
+	
+	  @Arguments("empno")
+    Employee getEmployee(String empno);
+    
+    @Arguments({"empno","name"})
+    Map getMap(String empno,String name);
+
+    @Sql("SELECT count(*) FROM employee")
+    Integer getCount();
+
+    @Arguments("employee")
+    int update(Employee employee);
+
+    @Arguments("employee")
+    void insert(Employee employee);
+    }
