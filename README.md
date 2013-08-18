@@ -25,6 +25,8 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
 * 邮箱：zhangdaiscott@163.com
 * 交流群：325978980，143858350
 
+###接口和SQL文件对应目录
+![github](http://www.jeecg.org/data/attachment/forum/201308/18/224051ey14ehqe000iegja.jpg "minidao")
 
 ### 接口定义[EmployeeDao.java]  
     
