@@ -21,7 +21,7 @@ MiniDao是Jeecg自己的持久化解决方案，集成了Hibernate实体维护�
 技术交流
 -----------------------------------
 * 作者: 张代浩
-* 技术网站：[www.jeecg.org](www.jeecg.org)
+* 技术网站：[www.jeecg.org](http://www.jeecg.org)
 * 邮箱：zhangdaiscott@163.com
 * 交流群：325978980，143858350
 
